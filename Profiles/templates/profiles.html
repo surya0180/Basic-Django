@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Profiles Page</title>
+</head>
+<body>
+    <a href="{% url 'index' %}" style="text-decoration: none;">Return</a>
+    {% for dr in DATA %}         
+        <div class="card">
+            <img src="{{dr.image.url}}" style="width: 50%;height: 50%;">
+            <h3 class="title">First Name: {{dr.firstname}}<h3>
+            <h3 class="title">Last Name: {{dr.lastname}}<h3>
+        </div> 
+    {% endfor %}
+</body>
+</html>
+
+{% endblock  %}
